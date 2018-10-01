@@ -1,0 +1,79 @@
+grey: rgb(178, 176, 176);
+red: rgb(140, 22, 22);
+darkGrey: rgb(75, 76, 75);
+green: rgb(109, 145, 118);
+burnt: rgb(119, 92, 58);
+
+
+body, html {
+    width:100%;
+    background-color: rgb(119, 92, 58);
+}
+
+.calculator {
+    width: 300px;
+    height: 500px;
+    background-color: rgb(178, 176, 176);
+    margin: 80px;
+    text-align: center;
+}
+    .title {
+        padding: 2px;
+        margin: 5px;
+        color: rgb(75, 76, 75);
+        font-family: 'Chakra Petch', sans-serif;
+        font-size: 30px;
+    }
+
+    .tagline {
+        text-transform: uppercase;
+        color: rgb(75, 76, 75);
+        font-family: 'Chakra Petch', sans-serif;
+        font-size: smaller;
+    }
+
+    .input {
+        background-color: rgb(109, 145, 118);
+        width: 90%;
+        font-size: 5px;
+        direction: rtl;
+        font-family: 'Chakra Petch', sans-serif;
+        padding-right: 5px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+    }
+
+    .row {
+        display: block;
+    }
+
+    .button {
+        width: ;
+        height: ;
+        border: ;
+        border-top: ;
+        background-color: rgb(75, 76, 75);
+        color: white;
+        font-size: 8px;
+        border-radius: 1px;
+        margin-left: 1px;
+        margin-right: 1px;
+        margin-bottom: 1px;
+        outline: 1px;
+    }
+
+    .ctrl {
+        border: ;
+        border-top: ;
+        background-color: rgb(140, 22, 22);
+        color: white;
+        font-size: 8px;
+        float: left;
+    }
+
+    .tall {
+        height: 100px;
+        float: right;
+        margin-right: 1px;
+        margin-left: ;
+}
