@@ -11,7 +11,7 @@ body, html {
 }
 
 .calculator {
-    width: 300px;
+    width: 350px;
     height: 500px;
     background-color: rgb(178, 176, 176);
     margin: 80px;
@@ -32,10 +32,10 @@ body, html {
         font-size: smaller;
     }
 
-    .input {
+    .input[type="text"] {
         background-color: rgb(109, 145, 118);
-        width: 90%;
-        font-size: 5px;
+        width: 85%;
+        font-size: 30px;
         direction: rtl;
         font-family: 'Chakra Petch', sans-serif;
         padding-right: 5px;
@@ -48,13 +48,11 @@ body, html {
     }
 
     .button {
-        width: ;
-        height: ;
-        border: ;
-        border-top: ;
+        width: 70px;
+        height: 70px;
         background-color: rgb(75, 76, 75);
         color: white;
-        font-size: 8px;
+        font-size: 15px;
         border-radius: 1px;
         margin-left: 1px;
         margin-right: 1px;
@@ -63,17 +61,21 @@ body, html {
     }
 
     .ctrl {
-        border: ;
-        border-top: ;
+        width: 70px;
+        height: 70px;
         background-color: rgb(140, 22, 22);
         color: white;
-        font-size: 8px;
-        float: left;
+        font-size: 15px;
+        border-radius: 1px;
+        margin-left: 1px;
+        margin-right: 1px;
+        margin-bottom: 1px;
+        outline: 1px;
     }
 
-    .tall {
-        height: 100px;
+    .button.tall {
+        height: 142px;
         float: right;
-        margin-right: 1px;
-        margin-left: ;
+        margin-right: 26px;
+        margin-left: -20px;
 }
