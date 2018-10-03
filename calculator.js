@@ -4,16 +4,19 @@ var entries = [];
 var temp = '';
 var total = 0;
 
+let display = document.getElementById("answer");
+
+
 function startCalc () {
-    document.addEventListener('click', valueToTemp)
+    document.addEventListener('click', getBtnValue);
 }
 
-let numberBtns = document.querySelectorAll('.button');
-numberBtns.forEach(btn =>
-    btn.addEventListener('click', valueToTemp));
-
-
-function valueToTemp() {
-        temp += NumberBtns.value;
-        document.getElementById("answer").value = temp;
+function getBtnValue() {
+        var clickedButton = event.target;
+        var btnValue = clickedButton.value;
+        if (btnValue != NaN || btnValue === ".") {
+            temp += btnValue;
+            display.value = temp;
+        }
 }
+
