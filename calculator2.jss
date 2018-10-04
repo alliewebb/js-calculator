@@ -1,33 +1,42 @@
-var btn = Array.from(document.getElementsByTagName("button"));
-for (var i = 0; i < btn.length; i++) {
-    btn[i].addEventListener("click", function() {
-    var val = btn[i].value;
-    if (val != NaN || val === ".") {
-        temp += val;
-        document.getElementById("answer").value = temp;
+document.addEventListener('DOMContentLoaded', startCalc)
+
+var entries = [];
+var temp = '';
+var total = 0;
+
+let display = document.getElementById("answer");
+
+
+function startCalc () {
+    document.addEventListener('click', getBtnValue);
+}
+
+function getBtnValue() {
+    var clickedButton = event.target;
+    var btnValue = clickedButton.value;
+    var numberedBtn = Number(btnValue);
+    if (numberedBtn != NaN || btnValue === ".") {
+        temp += btnValue;
+        display.value = temp;
     }
-    else if (val === "AC") {
-        entries = [];
-        total = 0;
+    else if (btnValue === "AC") {
+        location.reload();
+    }
+    else if (btnValue === "CE") {
         temp = '';
-        val = '';
-        document.getElementById("answer").value = "";
+        display.value = "";
     }
-    else if (val === "CE") {
-        temp = '';
-        document.getElementById("answer").value = "";
-    }
-    else if (val === "X") {
+    else if (btnValue === "X") {
         entries.push(temp);
         entries.push("*");
         temp = '';
     } 
-    else if (val === "÷") {
+    else if (btnValue === "÷") {
         entries.push(temp);
         entries.push("/");
         temp = '';
     }
-    else if (val === "=") {
+    else if (btnValue === "=") {
         entries.push(temp);
         var nt = entries.map(Number);
         for (var i = 1; i < entries.length; i++) {
@@ -45,18 +54,19 @@ for (var i = 0; i < btn.length; i++) {
             else if (symbol === "/") {
                 nt /= nextNum;
             }
-            i++
+            i++            
         }
-        if (nt < 0) {
-            return Math.abs(nt) + "-";
+            if (nt < 0) {
+                return Math.abs(nt) + "-";
+            }
+            display.value = nt;
+            entries = [];
+            temp = '';
         }
-        document.getElementById("answer").value = nt;
-        entries = [];
-        temp = '';
+        else {
+            entries.push(temp);
+            entries.push(val);
+            temp = '';
+        }
     }
-    else {
-        entries.push(temp);
-        entries.push(val);
-        temp = '';
-    }
-})
+
