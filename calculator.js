@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', startCalc)
 
 var entries = [];
 var temp = '';
-var total = 0;
 
 let display = document.getElementById("answer");
 
@@ -17,7 +16,7 @@ function getBtnValue() {
     var numberedBtn = Number(btnValue);
     if (numberedBtn != NaN || btnValue === ".") {
         temp += btnValue;
-        display.value = temp
+        display.value = temp;
     }
     if (btnValue === "AC") {
         location.reload();
@@ -25,16 +24,6 @@ function getBtnValue() {
     if (btnValue === "CE") {
         temp = '';
         display.value = "";
-    }
-    if (btnValue === "X") {
-        entries.push(temp);
-        entries.push("*");
-        temp = '';
-    } 
-    if (btnValue === "÷") {
-        entries.push(temp);
-        entries.push("/");
-        temp = '';
     }
     if (btnValue === "=") {
         entries.push(temp);
@@ -53,11 +42,10 @@ function getBtnValue() {
             }
             else if (symbol === "/") {
                 nt /= nextNum;
-            }
-            i++            
+            }         
         }
             if (nt < 0) {
-                return Math.abs(nt) + "-";
+                nt = Math.abs(nt) + "-";
             }
             display.value = nt;
             entries = [];

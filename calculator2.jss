@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', startCalc)
 
 var entries = [];
 var temp = '';
-var total = 0;
 
 let display = document.getElementById("answer");
 
@@ -19,28 +18,18 @@ function getBtnValue() {
         temp += btnValue;
         display.value = temp;
     }
-    else if (btnValue === "AC") {
+    if (btnValue === "AC") {
         location.reload();
     }
-    else if (btnValue === "CE") {
+    if (btnValue === "CE") {
         temp = '';
         display.value = "";
     }
-    else if (btnValue === "X") {
+    if (btnValue === "=") {
         entries.push(temp);
-        entries.push("*");
-        temp = '';
-    } 
-    else if (btnValue === "÷") {
-        entries.push(temp);
-        entries.push("/");
-        temp = '';
-    }
-    else if (btnValue === "=") {
-        entries.push(temp);
-        var nt = entries.map(Number);
+        var nt = Number(entries[0]);
         for (var i = 1; i < entries.length; i++) {
-            var nextNum = entries[i+1](Number);
+            var nextNum = Number(entries[i+1]);
             var symbol = entries[i];
             if (symbol === "+") {
                 nt += nextNum;
@@ -53,11 +42,10 @@ function getBtnValue() {
             }
             else if (symbol === "/") {
                 nt /= nextNum;
-            }
-            i++            
+            }         
         }
             if (nt < 0) {
-                return Math.abs(nt) + "-";
+                nt = Math.abs(nt) + "-";
             }
             display.value = nt;
             entries = [];
@@ -65,7 +53,6 @@ function getBtnValue() {
         }
         else {
             entries.push(temp);
-            entries.push(val);
             temp = '';
         }
     }
