@@ -16,6 +16,7 @@ body, html {
     background-color: rgb(178, 176, 176);
     margin: 80px;
     text-align: center;
+    position: relative;
 }
     .title {
         padding: 2px;
@@ -73,9 +74,6 @@ body, html {
         outline: 1px;
     }
 
-    .button.tall {
-        height: 142px;
-        float: right;
-        margin-right: 26px;
-        margin-left: -20px;
+    .button.wide {
+        width: 146px;
 }
